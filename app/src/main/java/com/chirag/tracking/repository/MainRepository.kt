@@ -2,9 +2,10 @@ package com.chirag.tracking.repository
 
 import com.chirag.tracking.db.Run
 import com.chirag.tracking.db.RunDAO
+import com.chirag.tracking.network.NewsAPI
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(val runDao: RunDAO) {
+class MainRepository @Inject constructor(val runDao: RunDAO, val newsAPI: NewsAPI) {
     suspend fun insertRun(run: Run) = runDao.insertRun(run)
 
     suspend fun deleteRun(run: Run) = runDao.deleteRun(run)

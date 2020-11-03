@@ -1,10 +1,11 @@
 package com.chirag.tracking.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.chirag.tracking.R
 import com.chirag.tracking.db.RunDAO
+import com.chirag.tracking.network.NewsAPI
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -14,9 +15,12 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var runDAO: RunDAO
 
+    @Inject
+    lateinit var newsAPI: NewsAPI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("rundao", "run dao${runDAO.hashCode()}")
+        Log.d("newsAPI", "newsAPI${newsAPI.hashCode()}")
     }
 }
